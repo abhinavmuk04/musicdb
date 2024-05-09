@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to Abhi's/Ankit's Music Search App!</h1>
+    {% if albums %}
+        <h2>Current Top Tracks</h2>
+        <ul>
+            {% for album in albums %}
+                <li>
+                    <strong>{{ album.name }}</strong> by {{ album.artist.name }}<br>
+                    <a href="{{ album.url }}" target="_blank">Preview</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Please register or log in to use the site.</p>
+    {% endif %}
+{% endblock %}
